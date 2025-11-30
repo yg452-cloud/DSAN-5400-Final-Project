@@ -1,0 +1,132 @@
+2025-11-30 14:55:07 - root - INFO - ======================================================================
+2025-11-30 14:55:07 - root - INFO - Logging session: 2025-11-30 14:55:07.965694
+2025-11-30 14:55:07 - root - INFO - Log file: /Users/ketianbugoutian/Desktop/Georgetown University DSAN/2025 Fall/DSAN 5400/final project/logs/data_acquisition.log
+2025-11-30 14:55:07 - root - INFO - ======================================================================
+2025-11-30 14:55:07 - root - INFO - ======================================================================
+2025-11-30 14:55:07 - root - INFO - Part 1: Data Acquisition & Thread Graph Construction
+2025-11-30 14:55:07 - root - INFO - ======================================================================
+2025-11-30 14:55:07 - root - INFO - Pipeline Parameters:
+2025-11-30 14:55:07 - root - INFO -   Data source: goemotions_local.csv (GoEmotions dataset)
+2025-11-30 14:55:07 - root - INFO -   Min thread depth: 1 (adjusted from original requirement)
+2025-11-30 14:55:07 - root - INFO -   Text cleaning: Enabled
+2025-11-30 14:55:07 - root - INFO -   Output format: Parquet
+2025-11-30 14:55:07 - root - INFO - 
+2025-11-30 14:55:07 - root - INFO - Step 1: Loading data
+2025-11-30 14:55:07 - loader - INFO - Initialized RedditDataLoader with source: goemotions_local.csv
+2025-11-30 14:55:07 - loader - INFO - Loading data from goemotions_local.csv...
+2025-11-30 14:55:08 - loader - INFO - Successfully loaded 211,225 comments
+2025-11-30 14:55:08 - loader - INFO - Columns (37): text, id, author, subreddit, link_id...
+2025-11-30 14:55:08 - loader - INFO - Dataset Statistics:
+2025-11-30 14:55:08 - loader - INFO -   Total comments: 211,225
+2025-11-30 14:55:08 - loader - INFO -   Comments with parent: 211,225
+2025-11-30 14:55:08 - loader - INFO -   Unique threads: 44,897
+2025-11-30 14:55:08 - root - INFO - Step 2: Text cleaning
+2025-11-30 14:55:08 - text_cleaner - INFO - Cleaning 211225 texts...
+2025-11-30 14:55:09 - text_cleaner - INFO - Removed 6 empty texts after cleaning
+2025-11-30 14:55:09 - text_cleaner - INFO - Cleaning complete. 211219 texts remaining.
+2025-11-30 14:55:09 - root - INFO - Step 3: Building thread graphs
+2025-11-30 14:55:09 - thread_builder - INFO - Initialized ThreadBuilder with 211219 comments
+2025-11-30 14:55:09 - thread_builder - INFO - Building thread graphs...
+2025-11-30 14:55:19 - thread_builder - INFO - Built 44895 thread graphs
+2025-11-30 14:55:19 - thread_builder - INFO - Calculating comment depths...
+2025-11-30 14:55:19 - thread_builder - INFO - Depth distribution:
+depth
+0    210516
+1       697
+2         6
+Name: count, dtype: int64
+2025-11-30 14:55:19 - root - INFO - Step 4: Filtering threads (min_depth=1)
+2025-11-30 14:55:19 - thread_builder - INFO - Filtered to 185 threads with depth >= 1
+2025-11-30 14:55:19 - thread_builder - INFO - Total comments: 2267
+2025-11-30 14:55:19 - root - INFO - Step 5: Extracting parent-child pairs
+2025-11-30 14:55:19 - thread_builder - INFO - Extracting parent-child pairs...
+2025-11-30 14:55:19 - thread_builder - INFO - Extracted 2530 parent-child pairs
+2025-11-30 14:55:19 - root - INFO - Step 6: Saving results
+2025-11-30 14:55:19 - root - INFO -   Saved: threads_with_replies.parquet (2,267 rows)
+2025-11-30 14:55:19 - root - INFO -   Saved: parent_child_pairs.parquet (2,530 rows)
+2025-11-30 14:55:19 - root - INFO - 
+2025-11-30 14:55:19 - root - INFO - ======================================================================
+2025-11-30 14:55:19 - root - INFO - Pipeline Completed Successfully
+2025-11-30 14:55:19 - root - INFO - ======================================================================
+2025-11-30 14:55:19 - root - INFO - Final Statistics:
+2025-11-30 14:55:19 - root - INFO -   Total comments processed: 211,219
+2025-11-30 14:55:19 - root - INFO -   Threads with replies: 185
+2025-11-30 14:55:19 - root - INFO -   Comments in threads: 2,267
+2025-11-30 14:55:19 - root - INFO -   Parent-child pairs: 2,530
+2025-11-30 14:55:19 - root - INFO - 
+2025-11-30 14:55:19 - root - INFO - Depth Distribution:
+2025-11-30 14:55:19 - root - INFO -   Depth 0: 210,516 comments
+2025-11-30 14:55:19 - root - INFO -   Depth 1: 697 comments
+2025-11-30 14:55:19 - root - INFO -   Depth 2: 6 comments
+2025-11-30 14:55:19 - root - INFO - 
+2025-11-30 14:55:19 - root - INFO - Output Files:
+2025-11-30 14:55:19 - root - INFO -   - threads_with_replies.parquet
+2025-11-30 14:55:19 - root - INFO -   - parent_child_pairs.parquet
+2025-11-30 14:55:19 - root - INFO - ======================================================================
+2025-11-30 14:55:19 - root - INFO - 
+2025-11-30 14:55:33 - root - INFO - ======================================================================
+2025-11-30 14:55:33 - root - INFO - Logging session: 2025-11-30 14:55:33.003335
+2025-11-30 14:55:33 - root - INFO - Log file: /Users/ketianbugoutian/Desktop/Georgetown University DSAN/2025 Fall/DSAN 5400/final project/logs/data_acquisition.log
+2025-11-30 14:55:33 - root - INFO - ======================================================================
+2025-11-30 14:55:33 - root - INFO - ======================================================================
+2025-11-30 14:55:33 - root - INFO - Part 1: Data Acquisition & Thread Graph Construction
+2025-11-30 14:55:33 - root - INFO - ======================================================================
+2025-11-30 14:55:33 - root - INFO - Pipeline Parameters:
+2025-11-30 14:55:33 - root - INFO -   Data source: goemotions_local.csv (GoEmotions dataset)
+2025-11-30 14:55:33 - root - INFO -   Min thread depth: 1 (adjusted from original requirement)
+2025-11-30 14:55:33 - root - INFO -   Text cleaning: Enabled
+2025-11-30 14:55:33 - root - INFO -   Output format: Parquet
+2025-11-30 14:55:33 - root - INFO - 
+2025-11-30 14:55:33 - root - INFO - Step 1: Loading data
+2025-11-30 14:55:33 - loader - INFO - Initialized RedditDataLoader with source: goemotions_local.csv
+2025-11-30 14:55:33 - loader - INFO - Loading data from goemotions_local.csv...
+2025-11-30 14:55:33 - loader - INFO - Successfully loaded 211,225 comments
+2025-11-30 14:55:33 - loader - INFO - Columns (37): text, id, author, subreddit, link_id...
+2025-11-30 14:55:33 - loader - INFO - Dataset Statistics:
+2025-11-30 14:55:33 - loader - INFO -   Total comments: 211,225
+2025-11-30 14:55:33 - loader - INFO -   Comments with parent: 211,225
+2025-11-30 14:55:33 - loader - INFO -   Unique threads: 44,897
+2025-11-30 14:55:33 - root - INFO - Step 2: Text cleaning
+2025-11-30 14:55:33 - text_cleaner - INFO - Cleaning 211225 texts...
+2025-11-30 14:55:34 - text_cleaner - INFO - Removed 6 empty texts after cleaning
+2025-11-30 14:55:34 - text_cleaner - INFO - Cleaning complete. 211219 texts remaining.
+2025-11-30 14:55:34 - root - INFO - Step 3: Building thread graphs
+2025-11-30 14:55:34 - thread_builder - INFO - Initialized ThreadBuilder with 211219 comments
+2025-11-30 14:55:34 - thread_builder - INFO - Building thread graphs...
+2025-11-30 14:55:44 - thread_builder - INFO - Built 44895 thread graphs
+2025-11-30 14:55:44 - thread_builder - INFO - Calculating comment depths...
+2025-11-30 14:55:44 - thread_builder - INFO - Depth distribution:
+depth
+0    210516
+1       697
+2         6
+Name: count, dtype: int64
+2025-11-30 14:55:44 - root - INFO - Step 4: Filtering threads (min_depth=1)
+2025-11-30 14:55:44 - thread_builder - INFO - Filtered to 185 threads with depth >= 1
+2025-11-30 14:55:44 - thread_builder - INFO - Total comments: 2267
+2025-11-30 14:55:44 - root - INFO - Step 5: Extracting parent-child pairs
+2025-11-30 14:55:44 - thread_builder - INFO - Extracting parent-child pairs...
+2025-11-30 14:55:44 - thread_builder - INFO - Extracted 2530 parent-child pairs
+2025-11-30 14:55:44 - root - INFO - Step 6: Saving results
+2025-11-30 14:55:44 - root - INFO -   Saved: threads_with_replies.parquet (2,267 rows)
+2025-11-30 14:55:44 - root - INFO -   Saved: parent_child_pairs.parquet (2,530 rows)
+2025-11-30 14:55:44 - root - INFO - 
+2025-11-30 14:55:44 - root - INFO - ======================================================================
+2025-11-30 14:55:44 - root - INFO - Pipeline Completed Successfully
+2025-11-30 14:55:44 - root - INFO - ======================================================================
+2025-11-30 14:55:44 - root - INFO - Final Statistics:
+2025-11-30 14:55:44 - root - INFO -   Total comments processed: 211,219
+2025-11-30 14:55:44 - root - INFO -   Threads with replies: 185
+2025-11-30 14:55:44 - root - INFO -   Comments in threads: 2,267
+2025-11-30 14:55:44 - root - INFO -   Parent-child pairs: 2,530
+2025-11-30 14:55:44 - root - INFO - 
+2025-11-30 14:55:44 - root - INFO - Depth Distribution:
+2025-11-30 14:55:44 - root - INFO -   Depth 0: 210,516 comments
+2025-11-30 14:55:44 - root - INFO -   Depth 1: 697 comments
+2025-11-30 14:55:44 - root - INFO -   Depth 2: 6 comments
+2025-11-30 14:55:44 - root - INFO - 
+2025-11-30 14:55:44 - root - INFO - Output Files:
+2025-11-30 14:55:44 - root - INFO -   - threads_with_replies.parquet
+2025-11-30 14:55:44 - root - INFO -   - parent_child_pairs.parquet
+2025-11-30 14:55:44 - root - INFO - ======================================================================
+2025-11-30 14:55:44 - root - INFO - 
