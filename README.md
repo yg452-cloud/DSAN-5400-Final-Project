@@ -227,3 +227,151 @@ python check_emotion_scores.py
 Child scores shape: (2530, 3)
 Parent scores shape: (2530, 3)
 ```
+
+# Part 2: Emotion Aggregation Module
+
+**Author:** Jiaheng Cao  
+**Project:** DSAN-5400 Final Project — *Echo to Empathy*  
+**Component:** Emotion Aggregation Layer (Pipeline Stage 2)
+
+---
+
+## 1. Overview
+
+This module transforms Reddit comments’ fine-grained GoEmotions annotations into:
+
+1. **Macro-level emotion categories**  
+   (e.g., *joy, anger, sadness, fear, neutral/other*)
+2. **A continuous valence score** in the range `[-1.0, 1.0]`
+
+These standardized emotional signals will be used in the next stage of the project to quantify emotional contagion dynamics between parent and child comments in Reddit threads.
+
+> **Important:** This module does **not** train models or classify text.  
+> It **aggregates** already-present GoEmotions labels stored in the dataset.
+
+---
+
+## 2. Data Input Requirements
+
+This component operates on the existing dataset:
+
+data/parent_child_pairs.parquet
+
+
+This file must contain the following structural elements:
+
+| Field Pattern | Description |
+|---------------|-------------|
+| `<emotion>_child` | GoEmotion indicators for child comments (0/1) |
+| `<emotion>_parent` | GoEmotion indicators for parent comments |
+| `id_child`, `id_parent` | Unique comment identifiers |
+
+Total rows in our dataset: **2530 comments**  
+Total fine-grained GoEmotions labels: **28**
+
+---
+
+## 3. Core Output Artifacts
+
+Running this module generates **two** parquet files:
+
+data/emotion_scores_child.parquet
+
+data/emotion_scores_parent.parquet
+
+
+Each file contains:
+
+| Column | Example | Meaning |
+|--------|--------|---------|
+| `comment_id` | `ed1gxcf` | Reddit comment identifier |
+| `macro_label` | `joy` / `anger` / `neutral` | Aggregated dominant emotion |
+| `valence` | `0.75`, `-0.8`, `0.2` | Continuous emotional intensity |
+
+These files are the **direct inputs** for Stage 3 of the project:
+> Emotional propagation and contagion analysis
+
+---
+
+## 4. Code Structure
+
+emocon/
+└── models/
+└── emotion_model.py # Main aggregation model
+
+run_aggregator_test.py # Quick validation script (sample only)
+
+run_emotion_aggregation.py # Full pipeline execution
+
+check_emotion_scores.py # Validate final parquet outputs
+
+---
+
+## 5. How to Reproduce Results
+
+### Step 1 — Run sample test (optional sanity check)
+
+```bash
+python run_aggregator_test.py
+```
+
+**Expected terminal output:**
+
+```bash
+Full df shape: (2530, 71)
+Sample df shape: (5, 71)
+Result DataFrame:
+  comment_id macro_label  valence
+0 ed1gxcf    joy         0.75
+1 ed1gxcf    joy         0.75
+2 ed1gxcf    joy         0.75
+3 ed1gxcf    neutral     0.20
+4 ed1gxcf    neutral     0.20
+```
+
+This confirms the module correctly:
+
+- Reads the parquet file
+- Selects child emotion columns
+- Maps emotions → macro category
+- Computes valence
+
+### Step 2 - Run full emotion aggregation pipeline
+
+```bash
+python run_emotion_aggregation.py
+```
+
+**Expected terminal output:**
+
+```bash
+Loaded parent_child_pairs.parquet with shape: (2530, 71)
+Child results shape: (2530, 3)
+Saved child emotion scores to: data/emotion_scores_child.parquet
+Parent results shape: (2530, 3)
+Saved parent emotion scores to: data/emotion_scores_parent.parquet
+```
+
+### Step 3 - Verify output files
+
+```bash
+python check_emotion_scores.py
+```
+
+**Expected terminal output:**
+
+```bash
+Child scores shape: (2530, 3)
+Parent scores shape: (2530, 3)
+```
+
+## 6. Hand-off Notes for Next Stage
+
+The Stage 3 team member should:
+
+- Load 'emotion_scores_child.parquet' and 'emotion_scores_parent.parquet'
+- Join with reply-thread structures to compute **emotion propagation directionality**
+- Perform statistical testing on:
+- - Parent to Child emotion transitions
+- - Subreddit-specific contagion patterns
+- - Valence correlation distance
