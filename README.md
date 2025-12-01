@@ -365,13 +365,71 @@ Child scores shape: (2530, 3)
 Parent scores shape: (2530, 3)
 ```
 
-## 6. Hand-off Notes for Next Stage
+# Part 3: Emotional Contagion Analysis  
+**Author:** Kaylee Cameron  
+**Component:** Emotion Propagation Modeling (Pipeline Stage 3)
 
-The Stage 3 team member should:
+---
 
-- Load 'emotion_scores_child.parquet' and 'emotion_scores_parent.parquet'
-- Join with reply-thread structures to compute **emotion propagation directionality**
-- Perform statistical testing on:
-- - Parent to Child emotion transitions
-- - Subreddit-specific contagion patterns
-- - Valence correlation distance
+## 3.1 Overview
+
+This module analyzes how emotions propagate within Reddit reply threads by combining:
+
+- Parent–child emotion labels  
+- Continuous valence scores  
+- Thread depth information  
+
+The goal is to quantify whether emotional tone systematically transfers from parent comments to replies, and how this influence changes across thread depth.
+
+---
+
+## 3.2 Core Analytic Outputs
+
+This stage produces the following metrics and artifacts:
+
+### 3.2.1 Parent → Child Valence Correlation  
+- Pearson and Spearman correlations for valence alignment  
+- Summary saved to:  
+  `emocon/results/valence_correlation.json`
+
+### 3.2.2 Emotion Transition Probabilities  
+- Full transition matrix across emotion categories  
+- Probability that child emotion matches or shifts relative to parent  
+- Saved to:  
+  `emocon/results/emotion_transitions.json`
+
+### 3.2.3 Propagation Strength Ranking  
+- Per-emotion contagion strength: *Which emotions carry forward most?*  
+- Saved to:  
+  `emocon/results/propagation_strength.json`
+
+### 3.2.4 Depth-Based Decay Modeling  
+- Analysis of how emotional matching changes from depth 1 → depth 2  
+- Decay plots and fitted model parameters  
+- Saved to:  
+  `emocon/figures/decay_curve.png`  
+  `emocon/results/decay_stats.json`
+
+### 3.2.5 Statistical Significance Testing  
+- Chi-square test for independence between parent & child emotion  
+- Z-test comparing emotional matching across depths  
+- Saved to:  
+  `emocon/results/significance_stats.json`
+
+### 3.2.6 Outlier Thread Identification  
+- Detection of threads where emotion propagation is unusually strong  
+- Saved to:  
+  `emocon/results/outlier_analysis.json`
+
+---
+
+## 3.3 Code Structure
+
+emocon/
+└── contagion/
+├── model.py
+├── emotion_transitions.py
+├── propagation_strength.py
+├── decay_model.py
+├── significance_tests.py
+└── outlier_analysis.py
