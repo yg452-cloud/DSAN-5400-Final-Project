@@ -1,0 +1,21 @@
+{
+    "depth_decay_points": [
+        {
+            "depth": 1,
+            "p_match": 0.28497691549514964
+        },
+        {
+            "depth": 2,
+            "p_match": 0.0
+        }
+    ],
+    "slope_summary": {
+        "depth_min": 1,
+        "depth_max": 2,
+        "p_match_min": 0.28497691549514964,
+        "p_match_max": 0.0,
+        "slope": -0.28497691549514964,
+        "interpretation": "Negative slope indicates decay (less matching at deeper replies)."
+    },
+    "note": "Decay modeled over child absolute depth levels; dataset has limited depth (1\u20132)."
+}
