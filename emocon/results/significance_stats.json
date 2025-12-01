@@ -1,0 +1,14 @@
+{
+    "chi_square_transition_test": {
+        "chi2": 6625.6375916989655,
+        "p_value": 0.0,
+        "degrees_of_freedom": 25
+    },
+    "depth_decay_significance": {
+        "p1": 0.28497691549514964,
+        "p2": 0.0,
+        "z": 11.026180425332091,
+        "p_value": 0.0
+    },
+    "note": "Z-test evaluates whether emotional match decreases significantly with depth."
+}
