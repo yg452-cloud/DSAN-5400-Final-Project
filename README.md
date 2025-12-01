@@ -427,9 +427,9 @@ This stage produces the following metrics and artifacts:
 
 emocon/
 └── contagion/
-├── model.py
-├── emotion_transitions.py
-├── propagation_strength.py
-├── decay_model.py
-├── significance_tests.py
-└── outlier_analysis.py
+├── model.py # Data merging & contagion dataset construction
+├── emotion_transitions.py # Emotion transition matrices
+├── propagation_strength.py # Per-emotion contagion ranking
+├── decay_model.py # Depth-based decay analysis
+├── significance_tests.py # Statistical tests (chi-square, z-tests)
+└── outlier_analysis.py # Extreme-case emotional pattern detection
