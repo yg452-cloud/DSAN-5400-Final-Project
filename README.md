@@ -295,8 +295,8 @@ These files are the **direct inputs** for Stage 3 of the project:
 
 ## 4. Code Structure
 
-emocon/
-└── models/
+emocon/  
+└── models/  
 └── emotion_model.py # Main aggregation model
 
 run_aggregator_test.py # Quick validation script (sample only)
