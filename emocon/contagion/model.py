@@ -110,3 +110,7 @@ if __name__ == "__main__":
     print(df.head())
     print("\nShape:", df.shape)
 
+    # Save for all downstream contagion analysis
+    output_path = "data/contagion_ready.parquet"
+    df.to_parquet(output_path, index=False)
+    print(f"\nSaved cleaned contagion dataset to: {output_path}")
