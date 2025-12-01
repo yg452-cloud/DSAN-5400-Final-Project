@@ -424,7 +424,7 @@ This stage produces the following metrics and artifacts:
 ---
 
 ## 3.3 Code Structure
-
+```
 emocon/
 └── contagion/
     ├── model.py                # Data merging & contagion dataset construction
@@ -433,6 +433,6 @@ emocon/
     ├── decay_model.py          # Depth-based decay analysis
     ├── significance_tests.py   # Statistical tests (chi-square, z-tests)
     └── outlier_analysis.py     # Extreme-case emotional pattern detection
-
+```
 
 
