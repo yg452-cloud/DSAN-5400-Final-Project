@@ -1,132 +1,398 @@
-2025-11-30 14:55:07 - root - INFO - ======================================================================
-2025-11-30 14:55:07 - root - INFO - Logging session: 2025-11-30 14:55:07.965694
-2025-11-30 14:55:07 - root - INFO - Log file: /Users/ketianbugoutian/Desktop/Georgetown University DSAN/2025 Fall/DSAN 5400/final project/logs/data_acquisition.log
-2025-11-30 14:55:07 - root - INFO - ======================================================================
-2025-11-30 14:55:07 - root - INFO - ======================================================================
-2025-11-30 14:55:07 - root - INFO - Part 1: Data Acquisition & Thread Graph Construction
-2025-11-30 14:55:07 - root - INFO - ======================================================================
-2025-11-30 14:55:07 - root - INFO - Pipeline Parameters:
-2025-11-30 14:55:07 - root - INFO -   Data source: goemotions_local.csv (GoEmotions dataset)
-2025-11-30 14:55:07 - root - INFO -   Min thread depth: 1 (adjusted from original requirement)
-2025-11-30 14:55:07 - root - INFO -   Text cleaning: Enabled
-2025-11-30 14:55:07 - root - INFO -   Output format: Parquet
-2025-11-30 14:55:07 - root - INFO - 
-2025-11-30 14:55:07 - root - INFO - Step 1: Loading data
-2025-11-30 14:55:07 - loader - INFO - Initialized RedditDataLoader with source: goemotions_local.csv
-2025-11-30 14:55:07 - loader - INFO - Loading data from goemotions_local.csv...
-2025-11-30 14:55:08 - loader - INFO - Successfully loaded 211,225 comments
-2025-11-30 14:55:08 - loader - INFO - Columns (37): text, id, author, subreddit, link_id...
-2025-11-30 14:55:08 - loader - INFO - Dataset Statistics:
-2025-11-30 14:55:08 - loader - INFO -   Total comments: 211,225
-2025-11-30 14:55:08 - loader - INFO -   Comments with parent: 211,225
-2025-11-30 14:55:08 - loader - INFO -   Unique threads: 44,897
-2025-11-30 14:55:08 - root - INFO - Step 2: Text cleaning
-2025-11-30 14:55:08 - text_cleaner - INFO - Cleaning 211225 texts...
-2025-11-30 14:55:09 - text_cleaner - INFO - Removed 6 empty texts after cleaning
-2025-11-30 14:55:09 - text_cleaner - INFO - Cleaning complete. 211219 texts remaining.
-2025-11-30 14:55:09 - root - INFO - Step 3: Building thread graphs
-2025-11-30 14:55:09 - thread_builder - INFO - Initialized ThreadBuilder with 211219 comments
-2025-11-30 14:55:09 - thread_builder - INFO - Building thread graphs...
-2025-11-30 14:55:19 - thread_builder - INFO - Built 44895 thread graphs
-2025-11-30 14:55:19 - thread_builder - INFO - Calculating comment depths...
-2025-11-30 14:55:19 - thread_builder - INFO - Depth distribution:
+2025-12-04 12:50:56 - root - INFO - ======================================================================
+2025-12-04 12:50:56 - root - INFO - Logging session: 2025-12-04 12:50:56.257487
+2025-12-04 12:50:56 - root - INFO - Log file: /Users/guiyanmin/Desktop/GU/Course/DSAN-5400/Final_Project/DSAN-5400-Final-Project/logs/data_acquisition.log
+2025-12-04 12:50:56 - root - INFO - ======================================================================
+2025-12-04 12:50:56 - root - INFO - Starting Data Pipeline...
+2025-12-04 12:50:56 - root - INFO - ======================================================================
+2025-12-04 12:50:56 - root - INFO - Part 1: Data Acquisition & Thread Graph Construction
+2025-12-04 12:50:56 - root - INFO - ======================================================================
+2025-12-04 12:50:56 - root - INFO - Pipeline Parameters:
+2025-12-04 12:50:56 - root - INFO -   Data source: goemotions_local.csv (GoEmotions dataset)
+2025-12-04 12:50:56 - root - INFO -   Min thread depth: 1 (adjusted from original requirement)
+2025-12-04 12:50:56 - root - INFO -   Text cleaning: Enabled
+2025-12-04 12:50:56 - root - INFO -   Output format: Parquet
+2025-12-04 12:50:56 - root - INFO - 
+2025-12-04 12:50:56 - root - INFO - === Part 1 Complete Pipeline ===
+
+2025-12-04 12:50:56 - root - INFO - Step 1: Loading data...
+2025-12-04 12:50:56 - emocon.data.loader - INFO - Initialized RedditDataLoader with source: /Users/guiyanmin/Desktop/GU/Course/DSAN-5400/Final_Project/DSAN-5400-Final-Project/data/goemotions_local.csv
+2025-12-04 12:50:56 - emocon.data.loader - INFO - Loading data from /Users/guiyanmin/Desktop/GU/Course/DSAN-5400/Final_Project/DSAN-5400-Final-Project/data/goemotions_local.csv...
+2025-12-04 12:50:56 - emocon.data.loader - INFO - Successfully loaded 211,225 comments
+2025-12-04 12:50:56 - emocon.data.loader - INFO - Columns (37): text, id, author, subreddit, link_id...
+2025-12-04 12:50:56 - emocon.data.loader - INFO - Dataset Statistics:
+2025-12-04 12:50:56 - emocon.data.loader - INFO -   Total comments: 211,225
+2025-12-04 12:50:56 - emocon.data.loader - INFO -   Comments with parent: 211,225
+2025-12-04 12:50:56 - emocon.data.loader - INFO -   Unique threads: 44,897
+2025-12-04 12:50:56 - root - INFO - 
+Step 2: Cleaning text...
+2025-12-04 12:50:56 - emocon.data.text_cleaner - INFO - Cleaning 211225 texts...
+2025-12-04 12:50:57 - emocon.data.text_cleaner - INFO - Removed 6 empty texts after cleaning
+2025-12-04 12:50:57 - emocon.data.text_cleaner - INFO - Cleaning complete. 211219 texts remaining.
+2025-12-04 12:50:57 - root - INFO - 
+Step 3: Building thread graphs...
+2025-12-04 12:50:57 - emocon.data.thread_builder - INFO - Initialized ThreadBuilder with 211219 comments
+2025-12-04 12:50:57 - emocon.data.thread_builder - INFO - Building thread graphs...
+2025-12-04 14:36:20 - root - INFO - ======================================================================
+2025-12-04 14:36:20 - root - INFO - Logging session: 2025-12-04 14:36:20.557413
+2025-12-04 14:36:20 - root - INFO - Log file: /Users/guiyanmin/Desktop/GU/Course/DSAN-5400/Final_Project/DSAN-5400-Final-Project/logs/data_acquisition.log
+2025-12-04 14:36:20 - root - INFO - ======================================================================
+2025-12-04 14:36:20 - root - INFO - ======================================================================
+2025-12-04 14:36:20 - root - INFO - Logging session: 2025-12-04 14:36:20.557601
+2025-12-04 14:36:20 - root - INFO - Log file: /Users/guiyanmin/Desktop/GU/Course/DSAN-5400/Final_Project/DSAN-5400-Final-Project/logs/data_acquisition.log
+2025-12-04 14:36:20 - root - INFO - ======================================================================
+2025-12-04 14:36:20 - root - INFO - Starting Data Pipeline...
+2025-12-04 14:36:20 - root - INFO - ======================================================================
+2025-12-04 14:36:20 - root - INFO - Part 1: Data Acquisition & Thread Graph Construction
+2025-12-04 14:36:20 - root - INFO - ======================================================================
+2025-12-04 14:36:20 - root - INFO - Pipeline Parameters:
+2025-12-04 14:36:20 - root - INFO -   Data source: goemotions_local.csv (GoEmotions dataset)
+2025-12-04 14:36:20 - root - INFO -   Min thread depth: 1 (adjusted from original requirement)
+2025-12-04 14:36:20 - root - INFO -   Text cleaning: Enabled
+2025-12-04 14:36:20 - root - INFO -   Output format: Parquet
+2025-12-04 14:36:20 - root - INFO - 
+2025-12-04 14:36:20 - root - INFO - === Part 1 Complete Pipeline ===
+
+2025-12-04 14:36:20 - root - INFO - Step 1: Loading data...
+2025-12-04 14:36:20 - emocon.data.loader - INFO - Initialized RedditDataLoader with source: /Users/guiyanmin/Desktop/GU/Course/DSAN-5400/Final_Project/DSAN-5400-Final-Project/data/goemotions_local.csv
+2025-12-04 14:36:20 - emocon.data.loader - INFO - Loading data from /Users/guiyanmin/Desktop/GU/Course/DSAN-5400/Final_Project/DSAN-5400-Final-Project/data/goemotions_local.csv...
+2025-12-04 14:36:21 - emocon.data.loader - INFO - Successfully loaded 211,225 comments
+2025-12-04 14:36:21 - emocon.data.loader - INFO - Columns (37): text, id, author, subreddit, link_id...
+2025-12-04 14:36:21 - emocon.data.loader - INFO - Dataset Statistics:
+2025-12-04 14:36:21 - emocon.data.loader - INFO -   Total comments: 211,225
+2025-12-04 14:36:21 - emocon.data.loader - INFO -   Comments with parent: 211,225
+2025-12-04 14:36:21 - emocon.data.loader - INFO -   Unique threads: 44,897
+2025-12-04 14:36:21 - root - INFO - 
+Step 2: Cleaning text...
+2025-12-04 14:36:21 - emocon.data.text_cleaner - INFO - Cleaning 211225 texts...
+2025-12-04 14:36:22 - emocon.data.text_cleaner - INFO - Removed 6 empty texts after cleaning
+2025-12-04 14:36:22 - emocon.data.text_cleaner - INFO - Cleaning complete. 211219 texts remaining.
+2025-12-04 14:36:22 - root - INFO - 
+Step 3: Building thread graphs...
+2025-12-04 14:36:22 - emocon.data.thread_builder - INFO - Initialized ThreadBuilder with 211219 comments
+2025-12-04 14:36:22 - emocon.data.thread_builder - INFO - Building thread graphs...
+2025-12-04 14:36:31 - emocon.data.thread_builder - INFO - Built 44895 thread graphs
+2025-12-04 14:36:31 - emocon.data.thread_builder - INFO - Calculating comment depths...
+2025-12-04 14:36:31 - emocon.data.thread_builder - INFO - Depth distribution:
 depth
 0    210516
 1       697
 2         6
 Name: count, dtype: int64
-2025-11-30 14:55:19 - root - INFO - Step 4: Filtering threads (min_depth=1)
-2025-11-30 14:55:19 - thread_builder - INFO - Filtered to 185 threads with depth >= 1
-2025-11-30 14:55:19 - thread_builder - INFO - Total comments: 2267
-2025-11-30 14:55:19 - root - INFO - Step 5: Extracting parent-child pairs
-2025-11-30 14:55:19 - thread_builder - INFO - Extracting parent-child pairs...
-2025-11-30 14:55:19 - thread_builder - INFO - Extracted 2530 parent-child pairs
-2025-11-30 14:55:19 - root - INFO - Step 6: Saving results
-2025-11-30 14:55:19 - root - INFO -   Saved: threads_with_replies.parquet (2,267 rows)
-2025-11-30 14:55:19 - root - INFO -   Saved: parent_child_pairs.parquet (2,530 rows)
-2025-11-30 14:55:19 - root - INFO - 
-2025-11-30 14:55:19 - root - INFO - ======================================================================
-2025-11-30 14:55:19 - root - INFO - Pipeline Completed Successfully
-2025-11-30 14:55:19 - root - INFO - ======================================================================
-2025-11-30 14:55:19 - root - INFO - Final Statistics:
-2025-11-30 14:55:19 - root - INFO -   Total comments processed: 211,219
-2025-11-30 14:55:19 - root - INFO -   Threads with replies: 185
-2025-11-30 14:55:19 - root - INFO -   Comments in threads: 2,267
-2025-11-30 14:55:19 - root - INFO -   Parent-child pairs: 2,530
-2025-11-30 14:55:19 - root - INFO - 
-2025-11-30 14:55:19 - root - INFO - Depth Distribution:
-2025-11-30 14:55:19 - root - INFO -   Depth 0: 210,516 comments
-2025-11-30 14:55:19 - root - INFO -   Depth 1: 697 comments
-2025-11-30 14:55:19 - root - INFO -   Depth 2: 6 comments
-2025-11-30 14:55:19 - root - INFO - 
-2025-11-30 14:55:19 - root - INFO - Output Files:
-2025-11-30 14:55:19 - root - INFO -   - threads_with_replies.parquet
-2025-11-30 14:55:19 - root - INFO -   - parent_child_pairs.parquet
-2025-11-30 14:55:19 - root - INFO - ======================================================================
-2025-11-30 14:55:19 - root - INFO - 
-2025-11-30 14:55:33 - root - INFO - ======================================================================
-2025-11-30 14:55:33 - root - INFO - Logging session: 2025-11-30 14:55:33.003335
-2025-11-30 14:55:33 - root - INFO - Log file: /Users/ketianbugoutian/Desktop/Georgetown University DSAN/2025 Fall/DSAN 5400/final project/logs/data_acquisition.log
-2025-11-30 14:55:33 - root - INFO - ======================================================================
-2025-11-30 14:55:33 - root - INFO - ======================================================================
-2025-11-30 14:55:33 - root - INFO - Part 1: Data Acquisition & Thread Graph Construction
-2025-11-30 14:55:33 - root - INFO - ======================================================================
-2025-11-30 14:55:33 - root - INFO - Pipeline Parameters:
-2025-11-30 14:55:33 - root - INFO -   Data source: goemotions_local.csv (GoEmotions dataset)
-2025-11-30 14:55:33 - root - INFO -   Min thread depth: 1 (adjusted from original requirement)
-2025-11-30 14:55:33 - root - INFO -   Text cleaning: Enabled
-2025-11-30 14:55:33 - root - INFO -   Output format: Parquet
-2025-11-30 14:55:33 - root - INFO - 
-2025-11-30 14:55:33 - root - INFO - Step 1: Loading data
-2025-11-30 14:55:33 - loader - INFO - Initialized RedditDataLoader with source: goemotions_local.csv
-2025-11-30 14:55:33 - loader - INFO - Loading data from goemotions_local.csv...
-2025-11-30 14:55:33 - loader - INFO - Successfully loaded 211,225 comments
-2025-11-30 14:55:33 - loader - INFO - Columns (37): text, id, author, subreddit, link_id...
-2025-11-30 14:55:33 - loader - INFO - Dataset Statistics:
-2025-11-30 14:55:33 - loader - INFO -   Total comments: 211,225
-2025-11-30 14:55:33 - loader - INFO -   Comments with parent: 211,225
-2025-11-30 14:55:33 - loader - INFO -   Unique threads: 44,897
-2025-11-30 14:55:33 - root - INFO - Step 2: Text cleaning
-2025-11-30 14:55:33 - text_cleaner - INFO - Cleaning 211225 texts...
-2025-11-30 14:55:34 - text_cleaner - INFO - Removed 6 empty texts after cleaning
-2025-11-30 14:55:34 - text_cleaner - INFO - Cleaning complete. 211219 texts remaining.
-2025-11-30 14:55:34 - root - INFO - Step 3: Building thread graphs
-2025-11-30 14:55:34 - thread_builder - INFO - Initialized ThreadBuilder with 211219 comments
-2025-11-30 14:55:34 - thread_builder - INFO - Building thread graphs...
-2025-11-30 14:55:44 - thread_builder - INFO - Built 44895 thread graphs
-2025-11-30 14:55:44 - thread_builder - INFO - Calculating comment depths...
-2025-11-30 14:55:44 - thread_builder - INFO - Depth distribution:
+2025-12-04 14:36:31 - root - INFO - 
+Step 4: Filtering threads with replies...
+2025-12-04 14:36:31 - emocon.data.thread_builder - INFO - Filtered to 185 threads with depth >= 1
+2025-12-04 14:36:31 - emocon.data.thread_builder - INFO - Total comments: 2267
+2025-12-04 14:36:31 - root - INFO - 
+Step 5: Extracting parent-child pairs...
+2025-12-04 14:36:31 - emocon.data.thread_builder - INFO - Extracting parent-child pairs...
+2025-12-04 14:36:31 - emocon.data.thread_builder - INFO - Extracted 2530 parent-child pairs
+2025-12-04 14:36:31 - root - INFO - 
+Step 6: Saving results...
+2025-12-04 14:36:31 - root - INFO -   Saved: threads_with_replies.parquet (2,267 rows)
+2025-12-04 14:36:31 - root - INFO -   Saved: parent_child_pairs.parquet (2,530 rows)
+2025-12-04 14:36:31 - root - INFO - 
+2025-12-04 14:36:31 - root - INFO - ======================================================================
+2025-12-04 14:36:31 - root - INFO - Pipeline Completed Successfully
+2025-12-04 14:36:31 - root - INFO - ======================================================================
+2025-12-04 14:36:31 - root - INFO - Final Statistics:
+2025-12-04 14:36:31 - root - INFO -   Total comments processed: 211,219
+2025-12-04 14:36:31 - root - INFO -   Threads with replies: 185
+2025-12-04 14:36:31 - root - INFO -   Comments in threads: 2,267
+2025-12-04 14:36:31 - root - INFO -   Parent-child pairs: 2,530
+2025-12-04 14:36:31 - root - INFO - 
+2025-12-04 14:36:31 - root - INFO - Depth Distribution:
+2025-12-04 14:36:31 - root - INFO -   Depth 0: 210,516 comments
+2025-12-04 14:36:31 - root - INFO -   Depth 1: 697 comments
+2025-12-04 14:36:31 - root - INFO -   Depth 2: 6 comments
+2025-12-04 14:36:31 - root - INFO - 
+2025-12-04 14:36:31 - root - INFO - Output Files:
+2025-12-04 14:36:31 - root - INFO -   - threads_with_replies.parquet
+2025-12-04 14:36:31 - root - INFO -   - parent_child_pairs.parquet
+2025-12-04 14:36:31 - root - INFO - ======================================================================
+2025-12-04 14:36:31 - root - INFO - 
+2025-12-04 14:36:31 - root - INFO - 
+=== Summary ===
+2025-12-04 14:36:31 - root - INFO - Total comments: 211,219
+2025-12-04 14:36:31 - root - INFO - Threads with replies: 185
+2025-12-04 14:36:31 - root - INFO - Comments in threads: 2,267
+2025-12-04 14:36:31 - root - INFO - Parent-child pairs: 2,530
+2025-12-04 14:36:31 - root - INFO - 
+Files saved:
+2025-12-04 14:36:31 - root - INFO - - threads_with_replies.parquet
+2025-12-04 14:36:31 - root - INFO - - parent_child_pairs.parquet
+2025-12-04 14:36:31 - root - INFO - 
+Logs saved to: logs/data_acquisition.log
+2025-12-04 14:36:31 - root - INFO - 
+2025-12-04 15:16:18 - root - INFO - ======================================================================
+2025-12-04 15:16:18 - root - INFO - Logging session: 2025-12-04 15:16:18.514983
+2025-12-04 15:16:18 - root - INFO - Log file: /Users/guiyanmin/Desktop/GU/Course/DSAN-5400/Final_Project/DSAN-5400-Final-Project/logs/data_acquisition.log
+2025-12-04 15:16:18 - root - INFO - ======================================================================
+2025-12-04 15:16:18 - root - INFO - ======================================================================
+2025-12-04 15:16:18 - root - INFO - Logging session: 2025-12-04 15:16:18.515535
+2025-12-04 15:16:18 - root - INFO - Log file: /Users/guiyanmin/Desktop/GU/Course/DSAN-5400/Final_Project/DSAN-5400-Final-Project/logs/data_acquisition.log
+2025-12-04 15:16:18 - root - INFO - ======================================================================
+2025-12-04 15:16:18 - root - INFO - Starting Data Pipeline...
+2025-12-04 15:16:18 - root - INFO - ======================================================================
+2025-12-04 15:16:18 - root - INFO - Part 1: Data Acquisition & Thread Graph Construction
+2025-12-04 15:16:18 - root - INFO - ======================================================================
+2025-12-04 15:16:18 - root - INFO - Pipeline Parameters:
+2025-12-04 15:16:18 - root - INFO -   Data source: goemotions_local.csv (GoEmotions dataset)
+2025-12-04 15:16:18 - root - INFO -   Min thread depth: 1 (adjusted from original requirement)
+2025-12-04 15:16:18 - root - INFO -   Text cleaning: Enabled
+2025-12-04 15:16:18 - root - INFO -   Output format: Parquet
+2025-12-04 15:16:18 - root - INFO - 
+2025-12-04 15:16:18 - root - INFO - === Part 1 Complete Pipeline ===
+
+2025-12-04 15:16:18 - root - INFO - Step 1: Loading data...
+2025-12-04 15:16:18 - emocon.data.loader - INFO - Initialized RedditDataLoader with source: /Users/guiyanmin/Desktop/GU/Course/DSAN-5400/Final_Project/DSAN-5400-Final-Project/data/goemotions_local.csv
+2025-12-04 15:16:18 - emocon.data.loader - INFO - Loading data from /Users/guiyanmin/Desktop/GU/Course/DSAN-5400/Final_Project/DSAN-5400-Final-Project/data/goemotions_local.csv...
+2025-12-04 15:16:19 - emocon.data.loader - INFO - Successfully loaded 211,225 comments
+2025-12-04 15:16:19 - emocon.data.loader - INFO - Columns (37): text, id, author, subreddit, link_id...
+2025-12-04 15:16:19 - emocon.data.loader - INFO - Dataset Statistics:
+2025-12-04 15:16:19 - emocon.data.loader - INFO -   Total comments: 211,225
+2025-12-04 15:16:19 - emocon.data.loader - INFO -   Comments with parent: 211,225
+2025-12-04 15:16:19 - emocon.data.loader - INFO -   Unique threads: 44,897
+2025-12-04 15:16:19 - root - INFO - 
+Step 2: Cleaning text...
+2025-12-04 15:16:19 - emocon.data.text_cleaner - INFO - Cleaning 211225 texts...
+2025-12-04 15:16:20 - emocon.data.text_cleaner - INFO - Removed 6 empty texts after cleaning
+2025-12-04 15:16:20 - emocon.data.text_cleaner - INFO - Cleaning complete. 211219 texts remaining.
+2025-12-04 15:16:20 - root - INFO - 
+Step 3: Building thread graphs...
+2025-12-04 15:16:20 - emocon.data.thread_builder - INFO - Initialized ThreadBuilder with 211219 comments
+2025-12-04 15:16:20 - emocon.data.thread_builder - INFO - Building thread graphs...
+2025-12-04 15:16:29 - emocon.data.thread_builder - INFO - Built 44895 thread graphs
+2025-12-04 15:16:29 - emocon.data.thread_builder - INFO - Calculating comment depths...
+2025-12-04 15:16:29 - emocon.data.thread_builder - INFO - Depth distribution:
 depth
 0    210516
 1       697
 2         6
 Name: count, dtype: int64
-2025-11-30 14:55:44 - root - INFO - Step 4: Filtering threads (min_depth=1)
-2025-11-30 14:55:44 - thread_builder - INFO - Filtered to 185 threads with depth >= 1
-2025-11-30 14:55:44 - thread_builder - INFO - Total comments: 2267
-2025-11-30 14:55:44 - root - INFO - Step 5: Extracting parent-child pairs
-2025-11-30 14:55:44 - thread_builder - INFO - Extracting parent-child pairs...
-2025-11-30 14:55:44 - thread_builder - INFO - Extracted 2530 parent-child pairs
-2025-11-30 14:55:44 - root - INFO - Step 6: Saving results
-2025-11-30 14:55:44 - root - INFO -   Saved: threads_with_replies.parquet (2,267 rows)
-2025-11-30 14:55:44 - root - INFO -   Saved: parent_child_pairs.parquet (2,530 rows)
-2025-11-30 14:55:44 - root - INFO - 
-2025-11-30 14:55:44 - root - INFO - ======================================================================
-2025-11-30 14:55:44 - root - INFO - Pipeline Completed Successfully
-2025-11-30 14:55:44 - root - INFO - ======================================================================
-2025-11-30 14:55:44 - root - INFO - Final Statistics:
-2025-11-30 14:55:44 - root - INFO -   Total comments processed: 211,219
-2025-11-30 14:55:44 - root - INFO -   Threads with replies: 185
-2025-11-30 14:55:44 - root - INFO -   Comments in threads: 2,267
-2025-11-30 14:55:44 - root - INFO -   Parent-child pairs: 2,530
-2025-11-30 14:55:44 - root - INFO - 
-2025-11-30 14:55:44 - root - INFO - Depth Distribution:
-2025-11-30 14:55:44 - root - INFO -   Depth 0: 210,516 comments
-2025-11-30 14:55:44 - root - INFO -   Depth 1: 697 comments
-2025-11-30 14:55:44 - root - INFO -   Depth 2: 6 comments
-2025-11-30 14:55:44 - root - INFO - 
-2025-11-30 14:55:44 - root - INFO - Output Files:
-2025-11-30 14:55:44 - root - INFO -   - threads_with_replies.parquet
-2025-11-30 14:55:44 - root - INFO -   - parent_child_pairs.parquet
-2025-11-30 14:55:44 - root - INFO - ======================================================================
-2025-11-30 14:55:44 - root - INFO - 
+2025-12-04 15:16:29 - root - INFO - 
+Step 4: Filtering threads with replies...
+2025-12-04 15:16:30 - emocon.data.thread_builder - INFO - Filtered to 185 threads with depth >= 1
+2025-12-04 15:16:30 - emocon.data.thread_builder - INFO - Total comments: 2267
+2025-12-04 15:16:30 - root - INFO - 
+Step 5: Extracting parent-child pairs...
+2025-12-04 15:16:30 - emocon.data.thread_builder - INFO - Extracting parent-child pairs...
+2025-12-04 15:16:30 - emocon.data.thread_builder - INFO - Extracted 2530 parent-child pairs
+2025-12-04 15:16:30 - root - INFO - 
+Step 6: Saving results...
+2025-12-04 15:16:30 - root - INFO -   Saved: threads_with_replies.parquet (2,267 rows)
+2025-12-04 15:16:30 - root - INFO -   Saved: parent_child_pairs.parquet (2,530 rows)
+2025-12-04 15:16:30 - root - INFO - 
+2025-12-04 15:16:30 - root - INFO - ======================================================================
+2025-12-04 15:16:30 - root - INFO - Pipeline Completed Successfully
+2025-12-04 15:16:30 - root - INFO - ======================================================================
+2025-12-04 15:16:30 - root - INFO - Final Statistics:
+2025-12-04 15:16:30 - root - INFO -   Total comments processed: 211,219
+2025-12-04 15:16:30 - root - INFO -   Threads with replies: 185
+2025-12-04 15:16:30 - root - INFO -   Comments in threads: 2,267
+2025-12-04 15:16:30 - root - INFO -   Parent-child pairs: 2,530
+2025-12-04 15:16:30 - root - INFO - 
+2025-12-04 15:16:30 - root - INFO - Depth Distribution:
+2025-12-04 15:16:30 - root - INFO -   Depth 0: 210,516 comments
+2025-12-04 15:16:30 - root - INFO -   Depth 1: 697 comments
+2025-12-04 15:16:30 - root - INFO -   Depth 2: 6 comments
+2025-12-04 15:16:30 - root - INFO - 
+2025-12-04 15:16:30 - root - INFO - Output Files:
+2025-12-04 15:16:30 - root - INFO -   - threads_with_replies.parquet
+2025-12-04 15:16:30 - root - INFO -   - parent_child_pairs.parquet
+2025-12-04 15:16:30 - root - INFO - ======================================================================
+2025-12-04 15:16:30 - root - INFO - 
+2025-12-04 15:16:30 - root - INFO - 
+=== Summary ===
+2025-12-04 15:16:30 - root - INFO - Total comments: 211,219
+2025-12-04 15:16:30 - root - INFO - Threads with replies: 185
+2025-12-04 15:16:30 - root - INFO - Comments in threads: 2,267
+2025-12-04 15:16:30 - root - INFO - Parent-child pairs: 2,530
+2025-12-04 15:16:30 - root - INFO - 
+Files saved:
+2025-12-04 15:16:30 - root - INFO - - threads_with_replies.parquet
+2025-12-04 15:16:30 - root - INFO - - parent_child_pairs.parquet
+2025-12-04 15:16:30 - root - INFO - 
+Logs saved to: logs/data_acquisition.log
+2025-12-04 15:16:30 - root - INFO - 
+2025-12-04 15:26:00 - root - INFO - ======================================================================
+2025-12-04 15:26:00 - root - INFO - Logging session: 2025-12-04 15:26:00.275367
+2025-12-04 15:26:00 - root - INFO - Log file: /Users/guiyanmin/Desktop/GU/Course/DSAN-5400/Final_Project/DSAN-5400-Final-Project/logs/data_acquisition.log
+2025-12-04 15:26:00 - root - INFO - ======================================================================
+2025-12-04 15:26:00 - root - INFO - ======================================================================
+2025-12-04 15:26:00 - root - INFO - Logging session: 2025-12-04 15:26:00.275614
+2025-12-04 15:26:00 - root - INFO - Log file: /Users/guiyanmin/Desktop/GU/Course/DSAN-5400/Final_Project/DSAN-5400-Final-Project/logs/data_acquisition.log
+2025-12-04 15:26:00 - root - INFO - ======================================================================
+2025-12-04 15:26:00 - root - INFO - Starting Data Pipeline...
+2025-12-04 15:26:00 - root - INFO - ======================================================================
+2025-12-04 15:26:00 - root - INFO - Part 1: Data Acquisition & Thread Graph Construction
+2025-12-04 15:26:00 - root - INFO - ======================================================================
+2025-12-04 15:26:00 - root - INFO - Pipeline Parameters:
+2025-12-04 15:26:00 - root - INFO -   Data source: goemotions_local.csv (GoEmotions dataset)
+2025-12-04 15:26:00 - root - INFO -   Min thread depth: 1 (adjusted from original requirement)
+2025-12-04 15:26:00 - root - INFO -   Text cleaning: Enabled
+2025-12-04 15:26:00 - root - INFO -   Output format: Parquet
+2025-12-04 15:26:00 - root - INFO - 
+2025-12-04 15:26:00 - root - INFO - === Part 1 Complete Pipeline ===
+
+2025-12-04 15:26:00 - root - INFO - Step 1: Loading data...
+2025-12-04 15:26:00 - emocon.data.loader - INFO - Initialized RedditDataLoader with source: /Users/guiyanmin/Desktop/GU/Course/DSAN-5400/Final_Project/DSAN-5400-Final-Project/data/goemotions_local.csv
+2025-12-04 15:26:00 - emocon.data.loader - INFO - Loading data from /Users/guiyanmin/Desktop/GU/Course/DSAN-5400/Final_Project/DSAN-5400-Final-Project/data/goemotions_local.csv...
+2025-12-04 15:26:00 - emocon.data.loader - INFO - Successfully loaded 211,225 comments
+2025-12-04 15:26:00 - emocon.data.loader - INFO - Columns (37): text, id, author, subreddit, link_id...
+2025-12-04 15:26:00 - emocon.data.loader - INFO - Dataset Statistics:
+2025-12-04 15:26:00 - emocon.data.loader - INFO -   Total comments: 211,225
+2025-12-04 15:26:00 - emocon.data.loader - INFO -   Comments with parent: 211,225
+2025-12-04 15:26:00 - emocon.data.loader - INFO -   Unique threads: 44,897
+2025-12-04 15:26:00 - root - INFO - 
+Step 2: Cleaning text...
+2025-12-04 15:26:00 - emocon.data.text_cleaner - INFO - Cleaning 211225 texts...
+2025-12-04 15:26:01 - emocon.data.text_cleaner - INFO - Removed 6 empty texts after cleaning
+2025-12-04 15:26:01 - emocon.data.text_cleaner - INFO - Cleaning complete. 211219 texts remaining.
+2025-12-04 15:26:01 - root - INFO - 
+Step 3: Building thread graphs...
+2025-12-04 15:26:01 - emocon.data.thread_builder - INFO - Initialized ThreadBuilder with 211219 comments
+2025-12-04 15:26:01 - emocon.data.thread_builder - INFO - Building thread graphs...
+2025-12-04 15:26:11 - emocon.data.thread_builder - INFO - Built 44895 thread graphs
+2025-12-04 15:26:11 - emocon.data.thread_builder - INFO - Calculating comment depths...
+2025-12-04 15:26:11 - emocon.data.thread_builder - INFO - Depth distribution:
+depth
+0    210516
+1       697
+2         6
+Name: count, dtype: int64
+2025-12-04 15:26:11 - root - INFO - 
+Step 4: Filtering threads with replies...
+2025-12-04 15:26:11 - emocon.data.thread_builder - INFO - Filtered to 185 threads with depth >= 1
+2025-12-04 15:26:11 - emocon.data.thread_builder - INFO - Total comments: 2267
+2025-12-04 15:26:11 - root - INFO - 
+Step 5: Extracting parent-child pairs...
+2025-12-04 15:26:11 - emocon.data.thread_builder - INFO - Extracting parent-child pairs...
+2025-12-04 15:26:11 - emocon.data.thread_builder - INFO - Extracted 2530 parent-child pairs
+2025-12-04 15:26:11 - root - INFO - 
+Step 6: Saving results...
+2025-12-04 15:26:11 - root - INFO -   Saved: threads_with_replies.parquet (2,267 rows)
+2025-12-04 15:26:11 - root - INFO -   Saved: parent_child_pairs.parquet (2,530 rows)
+2025-12-04 15:26:11 - root - INFO - 
+2025-12-04 15:26:11 - root - INFO - ======================================================================
+2025-12-04 15:26:11 - root - INFO - Pipeline Completed Successfully
+2025-12-04 15:26:11 - root - INFO - ======================================================================
+2025-12-04 15:26:11 - root - INFO - Final Statistics:
+2025-12-04 15:26:11 - root - INFO -   Total comments processed: 211,219
+2025-12-04 15:26:11 - root - INFO -   Threads with replies: 185
+2025-12-04 15:26:11 - root - INFO -   Comments in threads: 2,267
+2025-12-04 15:26:11 - root - INFO -   Parent-child pairs: 2,530
+2025-12-04 15:26:11 - root - INFO - 
+2025-12-04 15:26:11 - root - INFO - Depth Distribution:
+2025-12-04 15:26:11 - root - INFO -   Depth 0: 210,516 comments
+2025-12-04 15:26:11 - root - INFO -   Depth 1: 697 comments
+2025-12-04 15:26:11 - root - INFO -   Depth 2: 6 comments
+2025-12-04 15:26:11 - root - INFO - 
+2025-12-04 15:26:11 - root - INFO - Output Files:
+2025-12-04 15:26:11 - root - INFO -   - threads_with_replies.parquet
+2025-12-04 15:26:11 - root - INFO -   - parent_child_pairs.parquet
+2025-12-04 15:26:11 - root - INFO - ======================================================================
+2025-12-04 15:26:11 - root - INFO - 
+2025-12-04 15:26:11 - root - INFO - 
+=== Summary ===
+2025-12-04 15:26:11 - root - INFO - Total comments: 211,219
+2025-12-04 15:26:11 - root - INFO - Threads with replies: 185
+2025-12-04 15:26:11 - root - INFO - Comments in threads: 2,267
+2025-12-04 15:26:11 - root - INFO - Parent-child pairs: 2,530
+2025-12-04 15:26:11 - root - INFO - 
+Files saved:
+2025-12-04 15:26:11 - root - INFO - - threads_with_replies.parquet
+2025-12-04 15:26:11 - root - INFO - - parent_child_pairs.parquet
+2025-12-04 15:26:11 - root - INFO - 
+Logs saved to: logs/data_acquisition.log
+2025-12-04 15:26:11 - root - INFO - 
+2025-12-04 15:47:04 - root - INFO - ======================================================================
+2025-12-04 15:47:04 - root - INFO - Logging session: 2025-12-04 15:47:04.519809
+2025-12-04 15:47:04 - root - INFO - Log file: /Users/guiyanmin/Desktop/GU/Course/DSAN-5400/Final_Project/DSAN-5400-Final-Project/logs/data_acquisition.log
+2025-12-04 15:47:04 - root - INFO - ======================================================================
+2025-12-04 15:47:04 - root - INFO - ======================================================================
+2025-12-04 15:47:04 - root - INFO - Logging session: 2025-12-04 15:47:04.520050
+2025-12-04 15:47:04 - root - INFO - Log file: /Users/guiyanmin/Desktop/GU/Course/DSAN-5400/Final_Project/DSAN-5400-Final-Project/logs/data_acquisition.log
+2025-12-04 15:47:04 - root - INFO - ======================================================================
+2025-12-04 15:47:04 - root - INFO - Starting Data Pipeline...
+2025-12-04 15:47:04 - root - INFO - ======================================================================
+2025-12-04 15:47:04 - root - INFO - Part 1: Data Acquisition & Thread Graph Construction
+2025-12-04 15:47:04 - root - INFO - ======================================================================
+2025-12-04 15:47:04 - root - INFO - Pipeline Parameters:
+2025-12-04 15:47:04 - root - INFO -   Data source: goemotions_local.csv (GoEmotions dataset)
+2025-12-04 15:47:04 - root - INFO -   Min thread depth: 1 (adjusted from original requirement)
+2025-12-04 15:47:04 - root - INFO -   Text cleaning: Enabled
+2025-12-04 15:47:04 - root - INFO -   Output format: Parquet
+2025-12-04 15:47:04 - root - INFO - 
+2025-12-04 15:47:04 - root - INFO - === Part 1 Complete Pipeline ===
+
+2025-12-04 15:47:04 - root - INFO - Step 1: Loading data...
+2025-12-04 15:47:04 - emocon.data.loader - INFO - Initialized RedditDataLoader with source: /Users/guiyanmin/Desktop/GU/Course/DSAN-5400/Final_Project/DSAN-5400-Final-Project/data/goemotions_local.csv
+2025-12-04 15:47:04 - emocon.data.loader - INFO - Loading data from /Users/guiyanmin/Desktop/GU/Course/DSAN-5400/Final_Project/DSAN-5400-Final-Project/data/goemotions_local.csv...
+2025-12-04 15:47:05 - emocon.data.loader - INFO - Successfully loaded 211,225 comments
+2025-12-04 15:47:05 - emocon.data.loader - INFO - Columns (37): text, id, author, subreddit, link_id...
+2025-12-04 15:47:05 - emocon.data.loader - INFO - Dataset Statistics:
+2025-12-04 15:47:05 - emocon.data.loader - INFO -   Total comments: 211,225
+2025-12-04 15:47:05 - emocon.data.loader - INFO -   Comments with parent: 211,225
+2025-12-04 15:47:05 - emocon.data.loader - INFO -   Unique threads: 44,897
+2025-12-04 15:47:05 - root - INFO - 
+Step 2: Cleaning text...
+2025-12-04 15:47:05 - emocon.data.text_cleaner - INFO - Cleaning 211225 texts...
+2025-12-04 15:47:06 - emocon.data.text_cleaner - INFO - Removed 6 empty texts after cleaning
+2025-12-04 15:47:06 - emocon.data.text_cleaner - INFO - Cleaning complete. 211219 texts remaining.
+2025-12-04 15:47:06 - root - INFO - 
+Step 3: Building thread graphs...
+2025-12-04 15:47:06 - emocon.data.thread_builder - INFO - Initialized ThreadBuilder with 211219 comments
+2025-12-04 15:47:06 - emocon.data.thread_builder - INFO - Building thread graphs...
+2025-12-04 15:47:15 - emocon.data.thread_builder - INFO - Built 44895 thread graphs
+2025-12-04 15:47:15 - emocon.data.thread_builder - INFO - Calculating comment depths...
+2025-12-04 15:47:15 - emocon.data.thread_builder - INFO - Depth distribution:
+depth
+0    210516
+1       697
+2         6
+Name: count, dtype: int64
+2025-12-04 15:47:15 - root - INFO - 
+Step 4: Filtering threads with replies...
+2025-12-04 15:47:15 - emocon.data.thread_builder - INFO - Filtered to 185 threads with depth >= 1
+2025-12-04 15:47:15 - emocon.data.thread_builder - INFO - Total comments: 2267
+2025-12-04 15:47:15 - root - INFO - 
+Step 5: Extracting parent-child pairs...
+2025-12-04 15:47:15 - emocon.data.thread_builder - INFO - Extracting parent-child pairs...
+2025-12-04 15:47:16 - emocon.data.thread_builder - INFO - Extracted 2530 parent-child pairs
+2025-12-04 15:47:16 - root - INFO - 
+Step 6: Saving results...
+2025-12-04 15:47:16 - root - INFO -   Saved: threads_with_replies.parquet (2,267 rows)
+2025-12-04 15:47:16 - root - INFO -   Saved: parent_child_pairs.parquet (2,530 rows)
+2025-12-04 15:47:16 - root - INFO - 
+2025-12-04 15:47:16 - root - INFO - ======================================================================
+2025-12-04 15:47:16 - root - INFO - Pipeline Completed Successfully
+2025-12-04 15:47:16 - root - INFO - ======================================================================
+2025-12-04 15:47:16 - root - INFO - Final Statistics:
+2025-12-04 15:47:16 - root - INFO -   Total comments processed: 211,219
+2025-12-04 15:47:16 - root - INFO -   Threads with replies: 185
+2025-12-04 15:47:16 - root - INFO -   Comments in threads: 2,267
+2025-12-04 15:47:16 - root - INFO -   Parent-child pairs: 2,530
+2025-12-04 15:47:16 - root - INFO - 
+2025-12-04 15:47:16 - root - INFO - Depth Distribution:
+2025-12-04 15:47:16 - root - INFO -   Depth 0: 210,516 comments
+2025-12-04 15:47:16 - root - INFO -   Depth 1: 697 comments
+2025-12-04 15:47:16 - root - INFO -   Depth 2: 6 comments
+2025-12-04 15:47:16 - root - INFO - 
+2025-12-04 15:47:16 - root - INFO - Output Files:
+2025-12-04 15:47:16 - root - INFO -   - threads_with_replies.parquet
+2025-12-04 15:47:16 - root - INFO -   - parent_child_pairs.parquet
+2025-12-04 15:47:16 - root - INFO - ======================================================================
+2025-12-04 15:47:16 - root - INFO - 
+2025-12-04 15:47:16 - root - INFO - 
+=== Summary ===
+2025-12-04 15:47:16 - root - INFO - Total comments: 211,219
+2025-12-04 15:47:16 - root - INFO - Threads with replies: 185
+2025-12-04 15:47:16 - root - INFO - Comments in threads: 2,267
+2025-12-04 15:47:16 - root - INFO - Parent-child pairs: 2,530
+2025-12-04 15:47:16 - root - INFO - 
+Files saved:
+2025-12-04 15:47:16 - root - INFO - - threads_with_replies.parquet
+2025-12-04 15:47:16 - root - INFO - - parent_child_pairs.parquet
+2025-12-04 15:47:16 - root - INFO - 
+Logs saved to: logs/data_acquisition.log
+2025-12-04 15:47:16 - root - INFO - 
