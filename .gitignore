@@ -63,14 +63,6 @@ data/*.parquet
 logs/*.log
 !logs/.gitkeep
 
-# Results and figures (generated)
-results/*.json
-results/*.csv
-figures/*.png
-figures/*.jpg
-!results/.gitkeep
-!figures/.gitkeep
-
 # Environment
 .env
 .env.local
