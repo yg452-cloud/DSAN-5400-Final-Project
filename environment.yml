@@ -1,0 +1,46 @@
+name: emocon
+channels:
+  - conda-forge
+  - defaults
+
+dependencies:
+  # Python
+  - python=3.10
+
+  # Core data science
+  - pandas>=1.5.0
+  - numpy>=1.21.0
+  - pyarrow>=10.0.0
+
+  # Network analysis
+  - networkx>=2.8.0
+
+  # Statistical analysis
+  - scipy>=1.9.0
+  - statsmodels>=0.13.0
+
+  # Visualization
+  - matplotlib>=3.5.0
+  - seaborn>=0.12.0
+  - plotly>=5.11.0
+
+  # CLI
+  - click>=8.0.0
+
+  # Utilities
+  - tqdm>=4.64.0
+
+  # Development tools
+  - pytest>=7.0.0
+  - pytest-cov>=4.0.0
+  - black>=22.0.0
+  - flake8>=5.0.0
+
+  # Jupyter (optional)
+  - jupyter>=1.0.0
+  - ipykernel>=6.0.0
+
+  # Pip packages (if not available in conda)
+  - pip
+  - pip:
+      - lifelines>=0.27.0  # For survival analysis in decay models
