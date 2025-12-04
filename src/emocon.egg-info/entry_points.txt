@@ -1,0 +1,2 @@
+[console_scripts]
+emocon = emocon.cli:main
