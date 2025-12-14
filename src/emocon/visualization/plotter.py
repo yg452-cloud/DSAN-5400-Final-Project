@@ -15,13 +15,17 @@ def plot_emotion_barplot(df, col = 'emotion_child', title = "Dominant Emotion of
     Return: finished plot
     
     """
-    fig, ax = plt.subplots()
-    df[col].value_counts().plot(kind="bar", ax = ax)
+    counts = df[col].value_counts()
+    fig, ax = plt.subplots(figsize = (8, 5))
+    bars = ax.bar(counts.index, counts.values)
     ax.set_title(title)
     ax.set_xlabel(xlabel)
     ax.set_ylabel(ylabel)
+    fig.tight_layout()
+    ax.set_xticklabels(ax.get_xticklabels(), rotation=45, ha='right') 
     if path:
-        fig.savefig(path)
+        fig.savefig(path, bbox_inches='tight')
+    
     return fig
 
 def plot_valence_hist(df, col = 'valence_child', title = "Distribution of Valence Scores Among Child Comments", xlabel = 'Valence Score', ylabel = 'Count', path = None, bin = 20):
@@ -36,6 +40,7 @@ def plot_valence_hist(df, col = 'valence_child', title = "Distribution of Valenc
     ax.set_title(title)
     ax.set_xlabel(xlabel)
     ax.set_ylabel(ylabel)
+    fig.tight_layout()
     if path:
         fig.savefig(path)
     return fig
@@ -50,8 +55,10 @@ def plot_emotion_corr_heatmap(df, cols = ['valence_parent', 'valence_child'], ti
     fig, ax = plt.subplots()
     sns.heatmap(df[cols].corr(), annot=True, cmap = 'crest', ax= ax)
     ax.set_title(title)
+    fig.tight_layout()
     if path:
         fig.savefig(path)
+    return fig
 
 def plot_average_emotion_probs(df, cols = 'emotion_parent', title = "Barplot of  Average Emotion Probabilies", xlabel = 'Emotion', ylabel = 'Average Probability', path = None):
     """
@@ -65,6 +72,7 @@ def plot_average_emotion_probs(df, cols = 'emotion_parent', title = "Barplot of 
     ax.set_title(title)
     ax.set_xlabel(xlabel)
     ax.set_ylabel(ylabel)
+    fig.tight_layout()
     if path:
         fig.savefig(path)
     return fig
@@ -82,6 +90,7 @@ def plot_parent_child_valence_scatter(df, parent_valence = 'valence_parent', chi
     ax.set_title(title)
     ax.set_xlabel(xlabel)
     ax.set_ylabel(ylabel)
+    fig.tight_layout()
     if path:
         fig.savefig(path)
     return fig
@@ -99,6 +108,7 @@ def plot_depth_valence_correlation(df, depth_col = 'delta_depth', child_valence 
     ax.set_title(title)
     ax.set_xlabel(xlabel)
     ax.set_ylabel(ylabel)
+    fig.tight_layout()
     if path:
         fig.savefig(path)
     return fig
@@ -129,9 +139,6 @@ def plot_transition_heatmap(probs, title = "Emotion Transition Probability Heatm
     if path:
         fig.savefig(path, dpi=300, bbox_inches="tight")
     return fig
-    
-
-    print(f"Saved heatmap: {output_path}")
 
 if __name__ == "__main__":
     print("Testing plot functions on default data:")
