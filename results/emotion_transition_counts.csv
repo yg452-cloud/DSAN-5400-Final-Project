@@ -1,7 +1,7 @@
 emotion_parent,anger,fear,joy,neutral,other_negative,sadness
-anger,1287,306,2061,2412,625,81
-fear,225,0,306,850,0,0
-joy,2793,225,3847,4804,450,1556
-neutral,2218,81,4602,5547,387,306
-other_negative,486,0,306,1637,0,0
-sadness,625,225,0,306,0,306
+anger,8,2,14,9,1,1
+fear,1,0,2,2,0,0
+joy,9,1,24,21,2,6
+neutral,11,1,24,28,3,2
+other_negative,3,0,2,5,0,0
+sadness,1,1,0,2,0,2

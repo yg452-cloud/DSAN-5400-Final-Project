@@ -258,7 +258,9 @@ class EmotionAggregator:
             )
 
         results = pd.DataFrame.from_records(records)
+
         return results
+
 
     # ------------------------------------------------------------------
     # Convenience function for reading from a parquet file

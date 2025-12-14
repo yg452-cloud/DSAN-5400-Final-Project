@@ -1,50 +1,50 @@
 {
     "anger":{
-        "anger":0.1900472534,
-        "fear":0.1629254164,
-        "joy":0.2042413163,
-        "neutral":0.1687847196,
-        "other_negative":0.2000823384,
-        "sadness":0.42749658
+        "anger":0.2285714286,
+        "fear":0.2,
+        "joy":0.1428571429,
+        "neutral":0.1594202899,
+        "other_negative":0.3,
+        "sadness":0.1666666667
     },
     "fear":{
-        "anger":0.0451860602,
+        "anger":0.0571428571,
         "fear":0.0,
-        "joy":0.0164533821,
-        "neutral":0.0061639145,
+        "joy":0.0158730159,
+        "neutral":0.0144927536,
         "other_negative":0.0,
-        "sadness":0.1538987688
+        "sadness":0.1666666667
     },
     "joy":{
-        "anger":0.3043414058,
-        "fear":0.2215785663,
-        "joy":0.2813162706,
-        "neutral":0.3502016589,
-        "other_negative":0.1259777686,
+        "anger":0.4,
+        "fear":0.4,
+        "joy":0.380952381,
+        "neutral":0.347826087,
+        "other_negative":0.2,
         "sadness":0.0
     },
     "neutral":{
-        "anger":0.3561724749,
-        "fear":0.6154960174,
-        "joy":0.351297989,
-        "neutral":0.4221139944,
-        "other_negative":0.673939893,
-        "sadness":0.2093023256
+        "anger":0.2571428571,
+        "fear":0.4,
+        "joy":0.3333333333,
+        "neutral":0.4057971014,
+        "other_negative":0.5,
+        "sadness":0.3333333333
     },
     "other_negative":{
-        "anger":0.0922917897,
+        "anger":0.0285714286,
         "fear":0.0,
-        "joy":0.0329067642,
-        "neutral":0.0294498136,
+        "joy":0.0317460317,
+        "neutral":0.0434782609,
         "other_negative":0.0,
         "sadness":0.0
     },
     "sadness":{
-        "anger":0.0119610159,
+        "anger":0.0285714286,
         "fear":0.0,
-        "joy":0.1137842779,
-        "neutral":0.0232858991,
+        "joy":0.0952380952,
+        "neutral":0.0289855072,
         "other_negative":0.0,
-        "sadness":0.2093023256
+        "sadness":0.3333333333
     }
 }

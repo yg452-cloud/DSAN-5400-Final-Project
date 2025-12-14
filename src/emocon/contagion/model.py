@@ -102,6 +102,9 @@ def load_and_merge_data():
     # (Optional) drop the original depth_child from pairs if you don't need it
     # df = df.drop(columns=["depth_child_original"])
 
+    #drop duplicates MH
+    df.drop_duplicates(inplace=True)
+
     return df
 
 

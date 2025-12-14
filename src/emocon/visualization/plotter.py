@@ -69,7 +69,7 @@ def plot_average_emotion_probs(df, cols = 'emotion_parent', title = "Barplot of 
         fig.savefig(path)
     return fig
 
-def plot_parent_child_valence_scatter(df, parent_valence = 'valence_parent', child_valence = 'valence_child', title = "Correlation Between Child Valence and Angry Parent Comment", 
+def plot_parent_child_valence_scatter(df, parent_valence = 'valence_parent', child_valence = 'valence_child', title = "Correlation Between Child Valence and Parent Valence", 
                                           xlabel = 'Parent Valence', ylabel = 'Child Valence', path = None):
     """
     Creates scatterplot of parent valence vs child valence

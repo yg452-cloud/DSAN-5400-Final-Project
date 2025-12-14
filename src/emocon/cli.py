@@ -30,7 +30,7 @@ from emocon.contagion import decay_model
 from emocon.contagion import emotion_transitions
 from emocon.contagion import significance_tests
 from emocon.contagion import outlier_analysis
-
+from emocon.visualization.plotter import plot_average_emotion_probs, plot_depth_valence_correlation, plot_emotion_barplot, plot_emotion_corr_heatmap, plot_parent_child_valence_scatter, plot_valence_hist
 # Member 5 visualization module
 try:
     from emocon.visualization import plotter

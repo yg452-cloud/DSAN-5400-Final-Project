@@ -1,50 +1,50 @@
 {
     "anger":{
-        "anger":1287,
-        "fear":225,
-        "joy":2793,
-        "neutral":2218,
-        "other_negative":486,
-        "sadness":625
+        "anger":8,
+        "fear":1,
+        "joy":9,
+        "neutral":11,
+        "other_negative":3,
+        "sadness":1
     },
     "fear":{
-        "anger":306,
+        "anger":2,
         "fear":0,
-        "joy":225,
-        "neutral":81,
+        "joy":1,
+        "neutral":1,
         "other_negative":0,
-        "sadness":225
+        "sadness":1
     },
     "joy":{
-        "anger":2061,
-        "fear":306,
-        "joy":3847,
-        "neutral":4602,
-        "other_negative":306,
+        "anger":14,
+        "fear":2,
+        "joy":24,
+        "neutral":24,
+        "other_negative":2,
         "sadness":0
     },
     "neutral":{
-        "anger":2412,
-        "fear":850,
-        "joy":4804,
-        "neutral":5547,
-        "other_negative":1637,
-        "sadness":306
+        "anger":9,
+        "fear":2,
+        "joy":21,
+        "neutral":28,
+        "other_negative":5,
+        "sadness":2
     },
     "other_negative":{
-        "anger":625,
+        "anger":1,
         "fear":0,
-        "joy":450,
-        "neutral":387,
+        "joy":2,
+        "neutral":3,
         "other_negative":0,
         "sadness":0
     },
     "sadness":{
-        "anger":81,
+        "anger":1,
         "fear":0,
-        "joy":1556,
-        "neutral":306,
+        "joy":6,
+        "neutral":2,
         "other_negative":0,
-        "sadness":306
+        "sadness":2
     }
 }
