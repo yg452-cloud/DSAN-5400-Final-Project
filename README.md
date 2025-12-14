@@ -363,6 +363,19 @@ Identifies threads with unusually strong emotional propagation:
 
 ---
 
+### Stage 6: Visualization Utility Functions
+**Author:** Matt Hakim
+
+Provides visualiztion functions for easy valence, emotion, and contagion analysis. 
+
+Each function begins with 'plot_' and can be called to create simple visualizations to help understand relationships between parent and child valences, emotion, and depth. 
+
+### Usage example:
+
+```bash
+plot_valence_hist(df, col = 'valence_child', title = "Distribution of Valence Scores Among Child Comments", xlabel = 'Valence Score', ylabel = 'Count', path = 'plot.png', bin = 20)
+```
+
 ## Team Contributions
 
 ### Member 1: Data Engineering (Ke Tian)
