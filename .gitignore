@@ -69,3 +69,6 @@ logs/*.log
 
 # Build artifacts
 *.whl
+
+# Data
+data/goemotions_local.csv/
